@@ -5,31 +5,35 @@ locale:  en-us
 keywords:  powershell,cmdlet
 title:  about_Group_Policy_Settings
 ---
-# About Group Policy Settings
+# About PowerShell Core Group Policy Settings
 
 ## SHORT DESCRIPTION
-Describes the Group Policy settings for PowerShell
+Describes the Group Policy settings for PowerShell Core
 
 ## LONG DESCRIPTION
 
-PowerShell includes Group Policy settings to help you define
+PowerShell Core includes Group Policy settings to help you define
 consistent option values for servers in an enterprise environment.
 
-The PowerShell Group Policy settings are in the following
+The PowerShell Core Group Policy settings are in the following
 Group Policy paths:
 
     Computer Configuration\
       Administrative Templates\
-        Windows Components\
-          Windows PowerShell
+        PowerShell Core
+
+Computer Configuration policies are stored in this registry key: "HKLM\Software\Policies\Microsoft\PowerShellCore"
 
     User Configuration\
       Administrative Templates\
-        Windows Components\
-          Windows PowerShell
+        PowerShell Core
 
-Group policy settings in the User Configuration path take precedence
-over Group Policy settings in the Computer Configuration path.
+User Configuration policies are stored in this registry key: "HKCU\Software\Policies\Microsoft\PowerShellCore"
+
+For most policies settings in the Computer Configuration path take precedence
+over Group Policy settings in the User Configuration path.
+Please note that these settings can also be configured for PowerShell Core using JSON settings file.
+For detailed precedence of applying settings please check [PowerShell Core Policy RFC](https://github.com/PowerShell/PowerShell-RFC/blob/master/2-Draft-Accepted/RFC0041-Policy.md).
 
 The policies are as follows:
 
